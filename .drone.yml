@@ -1,0 +1,19 @@
+pipeline:
+  build:
+    image: openjdk:8-jdk
+    commands:
+      - chmod +x ./gradlew
+      - ./gradlew clean build
+  docker:
+    image: plugins/docker
+    repo: parag3gwl/spring
+    username: parag3gwl
+    password: india1947
+    debug: true
+    environment:
+      - DOCKER_LAUNCH_DEBUG=true
+  kube:
+    image: vallard/drone-kube
+    template: deployment.yaml
+    namespace: mynamespace
+    server: https://10.93.234.28:6433
