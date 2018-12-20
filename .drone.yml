@@ -7,8 +7,7 @@ pipeline:
   docker:
     image: plugins/docker:latest
     repo: parag3gwl/spring
-    username: parag3gwl
-    password: 1.Parag.Mangal
+    secrets: [ docker_username, docker_password ]
     debug: true
     tags: latest
   kube:
