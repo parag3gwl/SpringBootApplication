@@ -1,21 +1,8 @@
 pipeline:
-  build:
-    image: openjdk:8-jdk
-    commands:
-      - chmod +x ./gradlew
-      - ./gradlew clean build
-  docker:
-    image: plugins/docker:latest
-    repo: parag3gwl/spring
-    username: parag3gwl
-    password: 1.Parag.Mangal
-    debug: true
-    tags: latest
-    insecure: false
   deploy:
     image: quay.io/honestbee/drone-kubernetes
     kubernetes_server: https://35.232.157.193
-    kubernetes_token: MIIDDDCCAfSgAwIBAgIRAI5Hb0CWC6iTDGUqpmBthJUwDQYJKoZIhvcNAQELBQAwLzEtMCsGA1UEAxMkNWJlM2U3NTgtMjFjOC00N2YyLTk0NWEtZDk5MjAwOTM0YThiMB4XDTE4MTIyMDA2MDMzM1oXDTIzMTIxOTA3MDMzM1owLzEtMCsGA1UEAxMkNWJlM2U3NTgtMjFjOC00N2YyLTk0NWEtZDk5MjAwOTM0YThiMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAs27gR7ZGvDCnj1BEkdRE6G0HOwui/f++QNTZeL+yxgOeSEAl8Iy8OhP3Y+IJwUjQBF72cm/lkbJRsNJX0c78h9pRHCOHJUiWfMaePV4okuGxSA/XlV5vrf5QVCRbrVZ635ZumzY8kzXUad2CbZYquvUnsIpRjEb0gcGbGZ7NfFpx+QPPiAVe2N9EMl+iQbekNozXoDRAV5uPOJkukwrZptiXo2PkdOyWddfj8e/NhjYLVt+mjv6FWCuthLY4/mF9oC/abGKG61LEkCXKnNB5wu6gI0sftY4iXEQ4RcG8i1exEb613SqBAv4KrroHwlvkryOkw6iwMSL3of+rKM4iwwIDAQABoyMwITAOBgNVHQ8BAf8EBAMCAgQwDwYDVR0TAQH/BAUwAwEB/zANBgkqhkiG9w0BAQsFAAOCAQEAliwv8phoSK4gUDHFY3MX2dtu4CNgPv8Wq2hr221Pzp05sqnh/GW7urYdZoqM2o3WpVGUWFWJHnO4mZJGk+SzT00CLqbkrUWPLDRw49hsqo6nhPIwot02tFjzSlXqTzPYr+KMV0s+T+c5F6fuQUx2ZAeVkP7T6DRADDoEaiGB6/O/c1zUjrfuI24d+rNmt4t2SZ7pc3ISgX7DoEjq5cYbrxjo44vV/DE0XVNiSyTd5sHv4wpFPnKhjEtaMj5kTodMvj4PLp9HG7qlwnFzKFFk7/so8gW7AAB8aLfWND5eI9jEi6avFl5UtWlIOHtpPXX/3ZCUi5TskTYvVI/qiUrkAg==
+    kubernetes_token: ya29.Glx4BjV6minxKhgbVNfad7i8KDgYYtQ7_7VkfWZt5mpcx_QlihVlMx9kyvpC3bf6u1tBM7FSp1qPl8Ep4QK-C2Ae0xXaRZdDGVTz6IO5paI-cSG7sirB_O7iBcib2Q/f++QNTZeL+yxgOeSEAl8Iy8OhP3Y+IJwUjQBF72cm/lkbJRsNJX0c78h9pRHCOHJUiWfMaePV4okuGxSA/XlV5vrf5QVCRbrVZ635ZumzY8kzXUad2CbZYquvUnsIpRjEb0gcGbGZ7NfFpx+QPPiAVe2N9EMl+iQbekNozXoDRAV5uPOJkukwrZptiXo2PkdOyWddfj8e/NhjYLVt+mjv6FWCuthLY4/mF9oC/abGKG61LEkCXKnNB5wu6gI0sftY4iXEQ4RcG8i1exEb613SqBAv4KrroHwlvkryOkw6iwMSL3of+rKM4iwwIDAQABoyMwITAOBgNVHQ8BAf8EBAMCAgQwDwYDVR0TAQH/BAUwAwEB/zANBgkqhkiG9w0BAQsFAAOCAQEAliwv8phoSK4gUDHFY3MX2dtu4CNgPv8Wq2hr221Pzp05sqnh/GW7urYdZoqM2o3WpVGUWFWJHnO4mZJGk+SzT00CLqbkrUWPLDRw49hsqo6nhPIwot02tFjzSlXqTzPYr+KMV0s+T+c5F6fuQUx2ZAeVkP7T6DRADDoEaiGB6/O/c1zUjrfuI24d+rNmt4t2SZ7pc3ISgX7DoEjq5cYbrxjo44vV/DE0XVNiSyTd5sHv4wpFPnKhjEtaMj5kTodMvj4PLp9HG7qlwnFzKFFk7/so8gW7AAB8aLfWND5eI9jEi6avFl5UtWlIOHtpPXX/3ZCUi5TskTYvVI/qiUrkAg==
     deployment: my-deployment
     repo: parag3gwl/spring
     container: springbootapplication
