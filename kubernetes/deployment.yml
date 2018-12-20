@@ -5,9 +5,11 @@ metadata:
   labels:
     name: spring-service
 spec:
+  type: NodePort
   ports:
-    - port: 8080
-      targetPort: 8080
+    - port: 8088
+      targetPort: 8088
+      nodePort: 30030
   selector:
     app: spring-deployment
 ---
