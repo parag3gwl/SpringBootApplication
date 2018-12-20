@@ -14,5 +14,5 @@ pipeline:
   kube:
     image: vallard/drone-kube
     template: deployment.yaml
-    namespace: mynamespace
-    server: https://10.93.234.28:6433
+    namespace: gke_api-project-561755557370_us-central1-a_api-cluster
+    server: https://35.232.157.193
