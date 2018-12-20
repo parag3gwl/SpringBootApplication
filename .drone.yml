@@ -6,7 +6,6 @@ pipeline:
       - ./gradlew clean build
   docker:
     image: plugins/docker:latest
-    registry: docker.target.com
     repo: parag3gwl/spring
     username: parag3gwl
     password: 1.Parag.Mangal
