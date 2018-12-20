@@ -7,3 +7,5 @@ pipeline:
     repo: parag3gwl/spring
     container: springbootapplication
     tag: mytag
+    cluster: gke_api-project-561755557370_us-central1-a_api-cluster
+    context: gke_api-project-561755557370_us-central1-a_api-cluster
