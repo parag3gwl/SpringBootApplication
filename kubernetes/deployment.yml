@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: spring
-        image: spring:latest
+        image: parag3gwl/spring:latest
         imagePullPolicy: Always
         ports:
         - containerPort: 8080
