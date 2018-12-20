@@ -12,8 +12,11 @@ pipeline:
     debug: true
     tags: latest
     insecure: false
-  kube:
-    image: vallard/drone-kube
-    template: deployment.yaml
-    namespace: gke_api-project-561755557370_us-central1-a_api-cluster
-    server: https://35.232.157.193
+  deploy:
+    image: quay.io/honestbee/drone-kubernetes
+    kubernetes_server: https://35.232.157.193
+    kubernetes_token: Yq3AsF6Qb1ZC6CwI
+    deployment: my-deployment
+    repo: parag3gwl/spring
+    container: springbootapplication
+    tag: mytag
