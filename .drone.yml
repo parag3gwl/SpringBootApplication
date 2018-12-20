@@ -10,6 +10,7 @@ pipeline:
     secrets: [ docker_username, docker_password ]
     debug: true
     tags: latest
+    insecure: false
   kube:
     image: vallard/drone-kube
     template: deployment.yaml
