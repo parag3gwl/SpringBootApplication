@@ -27,7 +27,7 @@ steps:
 - name: deploy
   image: vallard/drone-kube
   settings:
-    template: /kubernetes/deployment.yml
+    template: kubernetes/deployment.yml
     namespace: default
     server: https://35.232.157.193
     ca:
