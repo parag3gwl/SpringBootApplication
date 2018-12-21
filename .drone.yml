@@ -7,6 +7,12 @@ steps:
   commands:
   - chmod +x ./gradlew
   - ./gradlew clean build
+  when:
+    event:
+    - push
+    - pull-request
+    branch:
+    - drone-testing
 
 - name: docker
   image: plugins/docker
