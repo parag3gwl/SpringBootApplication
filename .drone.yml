@@ -7,11 +7,8 @@ pipeline:
   docker:
     image: plugins/docker:latest
     repo: parag3gwl/spring
-    environment:
-      DOCKER_USERNAME:
-        from_secret: docker_username
-      DOCKER_PASSWORD:
-        from_secret: docker_password
+    username: ${DOCKER_USERNAME}
+    password: ${DOCKER_PASSWORD}
     debug: true
     tags: latest
     insecure: false
