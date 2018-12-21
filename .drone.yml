@@ -9,12 +9,11 @@ steps:
   - ./gradlew clean build
 
 - name: docker
-  image: plugins/docker:latest
+  image: plugins/docker
   repo: parag3gwl/spring
   username: parag3gwl
   password: 1.Parag.Mangal
   debug: true
-  tags: latest
   insecure: false
   
 - name: deploy
