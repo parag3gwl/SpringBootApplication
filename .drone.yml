@@ -14,7 +14,7 @@ steps:
     username: parag3gwl
     password: 1.Parag.Mangal
     repo: parag3gwl/spring
-    auto_tag: true
+    tags: latest
   
 - name: deploy
   image: quay.io/hectorqin/drone-kubectl
