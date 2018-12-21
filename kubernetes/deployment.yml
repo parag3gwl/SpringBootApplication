@@ -1,9 +1,28 @@
-apiVersion: extensions/v1beta1
+apiVersion: v1
+kind: Service
+metadata:
+  name: spring-service
+spec:
+  externalTrafficPolicy: Cluster
+  ports:
+  - port: 8080
+    protocol: TCP
+    targetPort: 8080
+  selector:
+    app: spring
+  sessionAffinity: None
+  type: LoadBalancer
+---
+
+apiVersion: apps/v1beta2
 kind: Deployment
 metadata:
   name: spring-deployment
 spec:
-  replicas: 2
+  replicas: 1
+  selector:
+    matchLabels:
+      app: spring
   template:
     metadata:
       labels:
@@ -11,7 +30,7 @@ spec:
     spec:
       containers:
       - name: spring
-        image: spring:latest
+        image: parag3gwl/spring:latest
         imagePullPolicy: Always
         ports:
         - containerPort: 8080
