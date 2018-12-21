@@ -24,7 +24,7 @@ steps:
     password:
       from_secret: docker_password
 
-- name: deploy
+- name: deploy_master
   image: vallard/drone-kube
   settings:
     template: kubernetes/deployment.yml
@@ -38,9 +38,9 @@ steps:
       - push
       - pull-request
       branch:
-      - drone-testing
+      - master
     
-- name: deploy_master
+- name: deploy
   image: quay.io/hectorqin/drone-kubectl
   settings:
     kubernetes_template: /kubernetes/deployment.yml
@@ -51,4 +51,4 @@ steps:
       event:
       - push
       branch:
-      - master
+      - drone-testing
