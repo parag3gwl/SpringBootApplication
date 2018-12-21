@@ -10,11 +10,11 @@ steps:
 
 - name: docker
   image: plugins/docker
-  repo: parag3gwl/spring
-  username: parag3gwl
-  password: 1.Parag.Mangal
-  debug: true
-  insecure: false
+  settings:
+    username: parag3gwl
+    password: 1.Parag.Mangal
+    repo: parag3gwl/spring
+    auto_tag: true
   
 - name: deploy
   image: quay.io/hectorqin/drone-kubectl
